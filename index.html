@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    let libros =[
+        {
+            nombre: "libro 5",
+            tipo: "entretenimiento",
+        },
+        {
+            nombre: "libro 1",
+            tipo: "entretenimiento",
+        },
+        {
+            nombre: "libro 8",
+            tipo: "entretenimiento",
+        },
+        {
+            nombre: "libro 6",
+            tipo: "entretenimiento",
+
+        },
+        {
+            nombre: "libro p",
+            tipo: "estudio",
+        },
+        {
+            nombre: "libro b",
+            tipo: "estudio",
+        },
+        {
+            nombre: "libro g",
+            tipo: "estudio",
+        },
+        {
+            nombre: "libro a",
+            tipo: "estudio",
+      
+        }
+
+        
+
+    ];
+
+    function ordenarLibrosPorTipo(libros) {
+    let librosOrdenados = {};
+
+    // Clasificar libros por tipo
+    libros.forEach(libro => {
+        if (!librosOrdenados[libro.tipo]) {
+            librosOrdenados[libro.tipo] = [];
+        }
+        librosOrdenados[libro.tipo].push(libro.nombre);
+    });
+
+    // Ordenar alfabéticamente los libros de cada tipo
+    for (let tipo in librosOrdenados) {
+        librosOrdenados[tipo].sort();
+    }
+
+    return librosOrdenados;
+}
+
+let librosOrdenados = ordenarLibrosPorTipo(libros);
+console.log(librosOrdenados);
+</script>
+    
